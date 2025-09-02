@@ -1,0 +1,137 @@
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.star.clickable {
+  cursor: pointer;
+}
+
+.star.clickable:hover {
+  transform: scale(1.1);
+}
+
+.star.filled {
+  color: #ffd700;
+  text-shadow: 0 0 3px rgba(255, 215, 0, 0.5);
+}
+
+.star.partial {
+  color: #ffd700;
+  opacity: 0.6;
+}
+
+.star.empty {
+  color: #ddd;
+}
+
+/* Size variants */
+.star-rating.small .star {
+  font-size: 14px;
+}
+
+.star-rating.medium .star {
+  font-size: 18px;
+}
+
+.star-rating.large .star {
+  font-size: 24px;
+}
+
+.star-rating.extra-large .star {
+  font-size: 32px;
+}
+
+/* Rating info */
+.rating-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.rating-value {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9em;
+}
+
+.rating-text {
+  font-size: 0.75em;
+  color: #666;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+/* Interactive states */
+.star-rating.interactive .star {
+  transition: all 0.15s ease;
+}
+
+.star-rating.interactive .star:hover {
+  transform: scale(1.15);
+}
+
+.star-rating.readonly .star {
+  cursor: default;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .star-rating.large .star {
+    font-size: 20px;
+  }
+  
+  .star-rating.extra-large .star {
+    font-size: 28px;
+  }
+  
+  .stars {
+    gap: 1px;
+  }
+  
+  .star-rating {
+    gap: 6px;
+  }
+}
+
+/* Animation for rating changes */
+@keyframes ratingChange {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.star-rating.interactive .star.filled {
+  animation: ratingChange 0.3s ease;
+}
+
+/* Accessibility */
+.star-rating:focus-within {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.star.clickable:focus {
+  outline: none;
+  background: rgba(0, 123, 255, 0.1);
+  border-radius: 2px;
+}

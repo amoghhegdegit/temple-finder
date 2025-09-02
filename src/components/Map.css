@@ -1,0 +1,44 @@
+.map-container {
+  height: 400px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.user-location-marker {
+  background: none;
+  border: none;
+  font-size: 20px;
+}
+
+.temple-marker {
+  background: none;
+  border: none;
+  font-size: 18px;
+}
+
+.temple-popup h3 {
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.temple-popup p {
+  margin: 0 0 10px 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.temple-popup button {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.temple-popup button:hover {
+  background: #5a6fd8;
+}

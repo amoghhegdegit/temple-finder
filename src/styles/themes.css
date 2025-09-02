@@ -1,0 +1,313 @@
+/* Global Theme Variables and Styles */
+
+:root {
+  /* Light Theme Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --text-muted: #adb5bd;
+  --border-color: #dee2e6;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
+  --shadow-heavy: rgba(0, 0, 0, 0.25);
+  --accent-primary: #667eea;
+  --accent-secondary: #764ba2;
+  --success-color: #4CAF50;
+  --warning-color: #ff9800;
+  --error-color: #f44336;
+  --info-color: #2196f3;
+}
+
+.dark-theme {
+  /* Dark Theme Colors */
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-tertiary: #404040;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-muted: #808080;
+  --border-color: #404040;
+  --shadow-light: rgba(0, 0, 0, 0.3);
+  --shadow-medium: rgba(0, 0, 0, 0.4);
+  --shadow-heavy: rgba(0, 0, 0, 0.6);
+  --accent-primary: #8b9dc3;
+  --accent-secondary: #9575cd;
+  --success-color: #66bb6a;
+  --warning-color: #ffb74d;
+  --error-color: #ef5350;
+  --info-color: #42a5f5;
+}
+
+/* Global Transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Body and HTML */
+body {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* Common Component Styles */
+.card, .temple-card, .review-item, .filter-panel, .photo-gallery {
+  background-color: var(--bg-primary);
+  border-color: var(--border-color);
+  box-shadow: 0 4px 12px var(--shadow-light);
+}
+
+.card:hover, .temple-card:hover {
+  box-shadow: 0 6px 20px var(--shadow-medium);
+}
+
+/* Text Colors */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+}
+
+p, span, div {
+  color: var(--text-primary);
+}
+
+.text-muted, .temple-meta, .review-date {
+  color: var(--text-muted);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+/* Form Elements */
+input, textarea, select {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.dark-theme input:focus,
+.dark-theme textarea:focus,
+.dark-theme select:focus {
+  box-shadow: 0 0 0 3px rgba(139, 157, 195, 0.2);
+}
+
+/* Buttons */
+.btn, button {
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+}
+
+.btn-secondary {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--border-color);
+}
+
+/* Navigation */
+.header, .navbar {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+}
+
+/* Map Container */
+.map-container {
+  border-color: var(--border-color);
+}
+
+.dark-theme .map-container {
+  filter: brightness(0.8) contrast(1.2);
+}
+
+/* Modal Overlays */
+.modal, .photo-modal {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dark-theme .modal,
+.dark-theme .photo-modal {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  background-color: var(--bg-primary);
+  border-color: var(--border-color);
+}
+
+/* Loading Spinners */
+.spinner, .loading-spinner {
+  border-color: var(--border-color);
+  border-top-color: var(--accent-primary);
+}
+
+/* Star Ratings */
+.star-rating .star {
+  color: var(--text-muted);
+}
+
+.star-rating .star.filled {
+  color: #ffd700;
+}
+
+/* Favorite Button */
+.favorite-btn.favorited {
+  color: #e91e63;
+}
+
+/* Review Form */
+.review-form {
+  background-color: var(--bg-primary);
+  border-color: var(--border-color);
+}
+
+/* Search Bar */
+.search-bar {
+  background-color: var(--bg-primary);
+  border-color: var(--border-color);
+}
+
+/* Filter Panel */
+.filter-panel select {
+  background-color: var(--bg-primary);
+}
+
+/* Temple List */
+.temple-list {
+  background-color: transparent;
+}
+
+/* Photo Gallery */
+.gallery-item {
+  background-color: var(--bg-tertiary);
+}
+
+.image-placeholder {
+  background-color: var(--bg-tertiary);
+}
+
+/* Scrollbars for dark theme */
+.dark-theme ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark-theme ::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+}
+
+.dark-theme ::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 4px;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Selection Colors */
+::selection {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+.dark-theme ::selection {
+  background-color: var(--accent-secondary);
+  color: white;
+}
+
+/* Focus Outlines */
+.dark-theme *:focus {
+  outline-color: var(--accent-primary);
+}
+
+/* Error States */
+.error-message {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: var(--error-color);
+  border-color: var(--error-color);
+}
+
+.dark-theme .error-message {
+  background-color: rgba(239, 83, 80, 0.2);
+}
+
+/* Success States */
+.success-message {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: var(--success-color);
+  border-color: var(--success-color);
+}
+
+.dark-theme .success-message {
+  background-color: rgba(102, 187, 106, 0.2);
+}
+
+/* Info States */
+.info-message {
+  background-color: rgba(33, 150, 243, 0.1);
+  color: var(--info-color);
+  border-color: var(--info-color);
+}
+
+.dark-theme .info-message {
+  background-color: rgba(66, 165, 245, 0.2);
+}
+
+/* Warning States */
+.warning-message {
+  background-color: rgba(255, 152, 0, 0.1);
+  color: var(--warning-color);
+  border-color: var(--warning-color);
+}
+
+.dark-theme .warning-message {
+  background-color: rgba(255, 183, 77, 0.2);
+}
+
+/* Smooth theme transition animation */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    transition: background-color 0.3s ease;
+  }
+  
+  body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --border-color: #000000;
+    --text-primary: #000000;
+  }
+  
+  .dark-theme {
+    --border-color: #ffffff;
+    --text-primary: #ffffff;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

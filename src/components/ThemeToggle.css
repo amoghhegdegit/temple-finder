@@ -1,0 +1,277 @@
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 2px solid #e0e0e0;
+  border-radius: 25px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle:active {
+  transform: translateY(0);
+}
+
+.theme-toggle.light {
+  background: linear-gradient(135deg, #fff, #f8f9fa);
+  border-color: #dee2e6;
+  color: #495057;
+}
+
+.theme-toggle.light:hover {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-color: #adb5bd;
+}
+
+.theme-toggle.dark {
+  background: linear-gradient(135deg, #343a40, #495057);
+  border-color: #6c757d;
+  color: #f8f9fa;
+}
+
+.theme-toggle.dark:hover {
+  background: linear-gradient(135deg, #495057, #6c757d);
+  border-color: #adb5bd;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+  position: relative;
+}
+
+.toggle-icon {
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  animation: iconBounce 0.5s ease;
+}
+
+@keyframes iconBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.toggle-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.toggle-slider {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 20px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle.light .toggle-slider {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+}
+
+.theme-toggle.dark .toggle-slider {
+  background: linear-gradient(135deg, #4a5568, #2d3748);
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle.dark .toggle-thumb {
+  transform: translateX(20px);
+  background: #f8f9fa;
+}
+
+/* Size variants */
+.theme-toggle.small {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  border-radius: 20px;
+}
+
+.theme-toggle.small .toggle-icon {
+  font-size: 1rem;
+}
+
+.theme-toggle.small .toggle-text {
+  font-size: 0.8rem;
+}
+
+.theme-toggle.small .toggle-slider {
+  width: 32px;
+  height: 16px;
+  right: 3px;
+}
+
+.theme-toggle.small .toggle-thumb {
+  width: 12px;
+  height: 12px;
+}
+
+.theme-toggle.small.dark .toggle-thumb {
+  transform: translateX(16px);
+}
+
+.theme-toggle.large {
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+}
+
+.theme-toggle.large .toggle-icon {
+  font-size: 1.4rem;
+}
+
+.theme-toggle.large .toggle-text {
+  font-size: 1rem;
+}
+
+.theme-toggle.large .toggle-slider {
+  width: 48px;
+  height: 24px;
+  right: 5px;
+}
+
+.theme-toggle.large .toggle-thumb {
+  width: 20px;
+  height: 20px;
+}
+
+.theme-toggle.large.dark .toggle-thumb {
+  transform: translateX(24px);
+}
+
+/* Focus states for accessibility */
+.theme-toggle:focus {
+  outline: 2px solid #4CAF50;
+  outline-offset: 2px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .theme-toggle {
+    padding: 6px 12px;
+  }
+  
+  .theme-toggle .toggle-text {
+    display: none;
+  }
+  
+  .toggle-container {
+    gap: 4px;
+  }
+  
+  .toggle-slider {
+    width: 36px;
+    height: 18px;
+  }
+  
+  .toggle-thumb {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .theme-toggle.dark .toggle-thumb {
+    transform: translateX(18px);
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-toggle {
+    padding: 4px 8px;
+    border-radius: 20px;
+  }
+  
+  .toggle-icon {
+    font-size: 1rem;
+  }
+  
+  .toggle-slider {
+    width: 32px;
+    height: 16px;
+    right: 2px;
+  }
+  
+  .toggle-thumb {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .theme-toggle.dark .toggle-thumb {
+    transform: translateX(16px);
+  }
+}
+
+/* Animation for theme transition */
+.theme-toggle {
+  animation: themeToggleAppear 0.3s ease;
+}
+
+@keyframes themeToggleAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hover effects for better interactivity */
+.theme-toggle:hover .toggle-icon {
+  transform: scale(1.1);
+}
+
+.theme-toggle:hover .toggle-thumb {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Ripple effect on click */
+.theme-toggle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+  pointer-events: none;
+}
+
+.theme-toggle:active::before {
+  width: 100px;
+  height: 100px;
+}

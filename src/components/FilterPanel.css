@@ -1,0 +1,226 @@
+.filter-panel {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.filter-panel:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.filter-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.reset-filters-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
+.reset-filters-btn:hover {
+  background: linear-gradient(135deg, #ff5252, #e53935);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+}
+
+.filter-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.filter-group select {
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.filter-group select:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.filter-group select:hover {
+  border-color: #bbb;
+}
+
+.distance-slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #e0e0e0;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.distance-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+  transition: all 0.3s ease;
+}
+
+.distance-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+.distance-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .filter-panel {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .filter-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .filter-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .reset-filters-btn {
+    align-self: flex-end;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .filter-groups {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .filter-group select {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-panel {
+    padding: 12px;
+    border-radius: 8px;
+  }
+  
+  .filter-header {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+  
+  .filter-groups {
+    gap: 12px;
+  }
+  
+  .filter-group label {
+    font-size: 0.85rem;
+  }
+  
+  .filter-group select {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Animation for filter panel appearance */
+@keyframes filterPanelSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.filter-panel {
+  animation: filterPanelSlideIn 0.4s ease-out;
+}
+
+/* Hover effects for better interactivity */
+.filter-group select option {
+  padding: 8px;
+}
+
+.filter-group select option:hover {
+  background-color: #f5f5f5;
+}
+
+/* Focus states for accessibility */
+.distance-slider:focus {
+  outline: 2px solid #4CAF50;
+  outline-offset: 2px;
+}
+
+.reset-filters-btn:focus {
+  outline: 2px solid #ff6b6b;
+  outline-offset: 2px;
+}
